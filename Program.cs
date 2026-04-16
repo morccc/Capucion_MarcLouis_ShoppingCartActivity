@@ -84,6 +84,17 @@ class Program
             }
 
             
+            bool found = false;
+            for (int i = 0; i < cartCount; i++)
+            {
+                if (cart[i].product.Id == selected.Id)
+                {
+                    cart[i].quantity += qty;
+                    cart[i].subtotal += selected.GetItemTotal(qty);
+                    found = true;
+                    break;
+                }
+            }
 
             if (!found)
             {
