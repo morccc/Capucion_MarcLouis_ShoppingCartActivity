@@ -113,7 +113,7 @@ class Program
                 cartCount++;
             }
 
-
+            selected.DeductStock(qty);
             
 
             Console.WriteLine("Added to cart!");
