@@ -62,7 +62,14 @@ class Program
                 continue;
             }
 
+            Product selected = products[choice - 1];
 
+            Console.Write("Enter quantity: ");
+            if (!int.TryParse(Console.ReadLine(), out int qty) || qty <= 0)
+            {
+                Console.WriteLine("Invalid quantity!");
+                continue;
+            }
 
             if (selected.RemainingStock == 0)
             {
