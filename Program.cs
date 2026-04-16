@@ -115,7 +115,6 @@ class Program
 
             selected.DeductStock(qty);
             
-
             Console.WriteLine("Added to cart!");
 
             Console.Write("Add more? (Y/N): ");
