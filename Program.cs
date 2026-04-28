@@ -4,29 +4,14 @@ class Product
 {
     public int Id;
     public string Name;
+    public string Category;
     public double Price;
     public int RemainingStock;
 
     public void DisplayProduct()
     {
-        Console.WriteLine($"{Id}. {Name} - P{Price} (Stock: {RemainingStock})");
+        Console.WriteLine($"{Id}. {Name} ({Category}) - P{Price} (Stock: {RemainingStock})");
     }
-
-    public double GetItemTotal(int quantity)
-    {
-        return Price * quantity;
-    }
-
-    public bool HasEnoughStock(int quantity)
-    {
-        return quantity <= RemainingStock;
-    }
-
-    public void DeductStock(int quantity)
-    {
-        RemainingStock -= quantity;
-    }
-}
 
 class CartItem
 {
@@ -35,15 +20,27 @@ class CartItem
     public double subtotal;
 }
 
+class Order
+{
+    public int ReceiptNo;
+    public double FinalTotal;
+}
+
+    
 class Program
 {
+    static int receiptCounter = 1;
+    
     static void Main()
     {
         Product[] products = new Product[]
         {
-            new Product { Id = 1, Name = "Monitor", Price = 5000, RemainingStock = 5 },
-            new Product { Id = 2, Name = "Mouse", Price = 500, RemainingStock = 10 },
-            new Product { Id = 3, Name = "Keyboard", Price = 1500, RemainingStock = 7 }
+            new Product { Id = 1, Name = "Monitor", Category="Electronics", Price = 5000, Stock = 10 },
+            new Product { Id = 2, Name = "Keyboard", Category="Electronics", Price = 1000, Stock = 20 },
+            new Product { Id = 3, Name = "Mouse", Category="Electronics", Price = 600, Stock = 25 },
+            new Product { Id = 4, Name = "Shirt", Category="Clothing", Price = 800, Stock = 20 },
+            new Product { Id = 5, Name = "Pants", Category="Clothing", Price = 500, Stock = 25 },
+            new Product { Id = 6, Name = "Jacket", Category="Clothing", Price = 1200, Stock = 10 }
         };
 
         CartItem[] cart = new CartItem[10];
@@ -127,7 +124,7 @@ class Program
         Console.WriteLine("\n--- RECEIPT ---");
         for (int i = 0; i < cartCount; i++)
         {
-            Console.WriteLine($"{cart[i].product.Name} x{cart[i].quantity} = ₱{cart[i].subtotal}");
+            Console.WriteLine($"{cart[i].product.Name} x{cart[i].quantity} = P{cart[i].subtotal}");
             grandTotal += cart[i].subtotal;
         }
 
