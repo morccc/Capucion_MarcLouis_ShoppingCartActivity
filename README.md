@@ -14,3 +14,14 @@ How do I fix my array in C# shopping cart system,
 How can I use classes with arrays in C#, 
 How do I fix errors in my C# code for stock and cart, 
 Lasty, How to fix cart over the product over the limit.
+
+_________________________________________________________________
+
+Enhanced Shopping Cart System
+
+
+
+
+
+
+
