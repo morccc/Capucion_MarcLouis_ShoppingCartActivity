@@ -121,32 +121,21 @@ class Program
 
             else if (choice == 2)
 
+                
 
 
+            else if (choice == 3)
+
+
+                
             
+            else if (choice == 4)
+                
 
-            
-        double grandTotal = 0;
-        Console.WriteLine("\n--- RECEIPT ---");
-        for (int i = 0; i < cartCount; i++)
-        {
-            Console.WriteLine($"{cart[i].product.Name} x{cart[i].quantity} = P{cart[i].subtotal}");
-            grandTotal += cart[i].subtotal;
+
+                
+            else if (choice == 5)
+            break
         }
-
-        Console.WriteLine($"Grand Total: P{grandTotal}");
-
-        double discount = 0;
-        if (grandTotal >= 5000)
-        {
-            discount = grandTotal * 0.10;
-            Console.WriteLine($"Discount (10%): P{discount}");
-        }
-
-        Console.WriteLine($"Final Total: P{grandTotal - discount}");
-
-        Console.WriteLine("\n--- UPDATED STOCK ---");
-        foreach (var p in products)
-            p.DisplayProduct();
     }
 }
