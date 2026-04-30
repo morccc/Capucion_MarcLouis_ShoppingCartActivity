@@ -36,12 +36,12 @@ class Program
     {
         Product[] products = new Product[]
         {
-            new Product { Id = 1, Name = "Monitor", Category="Electronics", Price = 5000, Stock = 10 },
-            new Product { Id = 2, Name = "Keyboard", Category="Electronics", Price = 1000, Stock = 20 },
-            new Product { Id = 3, Name = "Mouse", Category="Electronics", Price = 600, Stock = 25 },
-            new Product { Id = 4, Name = "Shirt", Category="Clothing", Price = 800, Stock = 20 },
-            new Product { Id = 5, Name = "Pants", Category="Clothing", Price = 500, Stock = 25 },
-            new Product { Id = 6, Name = "Jacket", Category="Clothing", Price = 1200, Stock = 10 }
+            new Product { Id = 1, Name = "Monitor", Category="Electronics", Price = 5000, RemainingStock = 10 },
+            new Product { Id = 2, Name = "Keyboard", Category="Electronics", Price = 1000, RemainingStock = 20 },
+            new Product { Id = 3, Name = "Mouse", Category="Electronics", Price = 600, RemainingStock = 25 },
+            new Product { Id = 4, Name = "Shirt", Category="Clothing", Price = 800, RemainingStock = 20 },
+            new Product { Id = 5, Name = "Pants", Category="Clothing", Price = 500, RemainingStock = 25 },
+            new Product { Id = 6, Name = "Jacket", Category="Clothing", Price = 1200, RemainingStock = 10 }
         };
 
         CartItem[] cart = new CartItem[10];
