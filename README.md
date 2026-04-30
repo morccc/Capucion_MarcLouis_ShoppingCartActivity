@@ -12,14 +12,11 @@ First is I asked AI what features I should add to upgrade my Shopping Cart Syste
 Next, I asked how to start improving my code. AI guided me step-by-step:
 
 First step is I added a Category field in the Product class
-Then, I improved my classes (Product, CartItem, Order)
+Improved my classes (Product, CartItem, Order)
+Added payment validation and change computation
+Added receipt number and date/time
+Implemented order history and low stock alerts
 
+I used AI to fix errors in my arrays and class connections, especially when handling cart updates and avoiding duplicate items.
 
-
-
-
-
-
-
-
-
+After using AI suggestions, I and simplified some parts the code to make sure I understand how everything works.
