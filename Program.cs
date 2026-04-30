@@ -120,16 +120,61 @@ class Program
             }
 
             else if (choice == 2)
+              {
+                while (true)
+                {
+                    Console.WriteLine("\n--- CART ---");
+                    double total = 0;
 
-                
+                    for (int i = 0; i < cartCount; i++)
+                    {
+                        Console.WriteLine($"{i+1}. {cart[i].product.Name} x{cart[i].quantity} = P{cart[i].subtotal}");
+                        total += cart[i].subtotal;
+                    }
 
+                    Console.WriteLine("Total: P" + total);
 
-            else if (choice == 3)
+                    Console.WriteLine("\n1. Remove Item");
+                    Console.WriteLine("2. Update Quantity");
+                    Console.WriteLine("3. Clear Cart");
+                    Console.WriteLine("4. Checkout");
+                    Console.WriteLine("5. Back");
+
+                    Console.Write("Choice: ");
+                    int c;
+                    if (!int.TryParse(Console.ReadLine(), out c)) continue;
+
+                    if (c == 1)
+                    {
+                        Console.Write("Enter item #: ");
+                        int i = int.Parse(Console.ReadLine()) - 1;
+                        if (i >= 0 && i < cartCount)
+                        {
+                            cart[i] = cart[cartCount - 1];
+                            cartCount--;
+                        }
+                    }
+
+                    else if (c == 2)
+                    {
+                        Console.Write("Item #: ");
+                        int i = int.Parse(Console.ReadLine()) - 1;
+                        Console.Write("New qty: ");
+                        int newQty = int.Parse(Console.ReadLine());
+
+                        if (i >= 0 && i < cartCount)
+                        {
+                            cart[i].quantity = newQty;
+                            cart[i].subtotal = newQty * cart[i].product.Price;
+                        }
+                    }
+
+           // else if (choice == 3)
 
 
                 
             
-            else if (choice == 4)
+            //else if (choice == 4)
                 
 
 
