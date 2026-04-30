@@ -226,15 +226,26 @@ class Program
                 }
             }
 
-           // else if (choice == 3)
+            else if (choice == 3)
+            {
+                Console.Write("Search name: ");
+                string search = Console.ReadLine().ToLower();
 
+                foreach (var p in products)
+                {
+                    if (p.Name.ToLower().Contains(search))
+                        p.Display();
+                }
+            }
 
-                
-            
-            //else if (choice == 4)
-                
-
-
+            else if (choice == 4)
+            {
+                Console.WriteLine("\n--- ORDER HISTORY ---");
+                for (int i = 0; i < historyCount; i++)
+                {
+                    Console.WriteLine($"Receipt #{history[i].ReceiptNo} - P{history[i].FinalTotal}");
+                }
+            }
                 
             else if (choice == 5)
             break
