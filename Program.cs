@@ -168,6 +168,63 @@ class Program
                             cart[i].subtotal = newQty * cart[i].product.Price;
                         }
                     }
+                
+                    else if (c == 3)
+                    {
+                        cartCount = 0;
+                        Console.WriteLine("Cart cleared!");
+                    }
+
+                    else if (c == 4)
+                    {
+                        double discount = total >= 5000 ? total * 0.10 : 0;
+                        double finalTotal = total - discount;
+
+                        double payment;
+                        while (true)
+                        {
+                            Console.Write("Enter payment: ");
+                            if (!double.TryParse(Console.ReadLine(), out payment) || payment < finalTotal)
+                            {
+                                Console.WriteLine("Invalid or insufficient!");
+                            }
+                            else break;
+                        }
+
+                        double change = payment - finalTotal;
+
+                        Console.WriteLine("\n--- RECEIPT ---");
+                        Console.WriteLine("Receipt No: " + receiptCounter);
+                        Console.WriteLine("Date: " + DateTime.Now);
+
+                        Console.WriteLine("Total: P" + total);
+                        Console.WriteLine("Discount: P" + discount);
+                        Console.WriteLine("Final: P" + finalTotal);
+                        Console.WriteLine("Payment: P" + payment);
+                        Console.WriteLine("Change: P" + change);
+
+                        history[historyCount++] = new Order
+                        {
+                            ReceiptNo = receiptCounter,
+                            FinalTotal = finalTotal
+                        };
+
+                        receiptCounter++;
+                        cartCount = 0;
+
+                        Console.WriteLine("\nLOW STOCK ALERT:");
+                        foreach (var p in products)
+                        {
+                            if (p.Stock <= 5)
+                                Console.WriteLine(p.Name + " has only " + p.Stock + " left.");
+                        }
+
+                        break;
+                    }
+
+                    else break;
+                }
+            }
 
            // else if (choice == 3)
 
