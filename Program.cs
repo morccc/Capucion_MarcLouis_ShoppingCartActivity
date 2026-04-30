@@ -70,7 +70,7 @@ class Program
             if (choice == 1)
             {
                 Console.WriteLine("\n--- PRODUCTS ---");
-                foreach (var p in products) p.Display();
+                foreach (var p in products) p.DisplayProduct();
 
                 Console.Write("Enter product #: ");
                 int pnum;
@@ -90,7 +90,7 @@ class Program
                     continue;
                 }
 
-                if (qty > selected.Stock)
+                if (qty > selected.RemainingStock)
                 {
                     Console.WriteLine("Not enough stock!");
                     continue;
@@ -119,7 +119,7 @@ class Program
                     cartCount++;
                 }
 
-                selected.Stock -= qty;
+                selected.RemainingStock -= qty;
                 Console.WriteLine("Added to cart!");
             }
 
@@ -219,8 +219,8 @@ class Program
                         Console.WriteLine("\nLOW STOCK ALERT:");
                         foreach (var p in products)
                         {
-                            if (p.Stock <= 5)
-                                Console.WriteLine(p.Name + " has only " + p.Stock + " left.");
+                            if (p.RemainingStock <= 5)
+                                Console.WriteLine(p.Name + " has only " + p.RemainingStock + " left.");
                         }
 
                         break;
@@ -238,7 +238,7 @@ class Program
                 foreach (var p in products)
                 {
                     if (p.Name.ToLower().Contains(search))
-                        p.Display();
+                        p.DisplayProduct();
                 }
             }
 
