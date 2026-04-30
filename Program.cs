@@ -12,6 +12,7 @@ class Product
     {
         Console.WriteLine($"{Id}. {Name} ({Category}) - P{Price} (Stock: {RemainingStock})");
     }
+}
 
 class CartItem
 {
@@ -46,6 +47,9 @@ class Program
         CartItem[] cart = new CartItem[10];
         int cartCount = 0;
 
+        Order[] history = new Order[10];
+        int historyCount = 0;
+        
         while (true)
         {
             Console.WriteLine("\n=== MAIN MENU ===");
@@ -248,7 +252,7 @@ class Program
             }
                 
             else if (choice == 5)
-            break
+            break;
         }
     }
 }
