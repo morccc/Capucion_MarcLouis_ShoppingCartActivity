@@ -3,6 +3,12 @@
 Enhanced Shopping Cart System
 _________________________________________________________________
 
+Summary of Changes
+
+The program was improved by adding new features and fixing errors to make it more complete and user-friendly. Updates include adding a product category, improving the cart system (add, update, remove, and clear), adding a search feature, implementing a payment and receipt system, and adding order history. The main menu was also improved to make it easier to read. Several bugs were fixed, such as incorrect variable usage ("Stock" to "RemainingStock") and wrong method calls ("Display()" to "DisplayProduct()"), along with better input validation.
+
+_________________________________________________________________
+
 AI Usage in This Project
 
 I used ChatGPT as a guide to help me improve my quiz part 2 step by step.
