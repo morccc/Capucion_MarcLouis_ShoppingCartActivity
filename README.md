@@ -4,6 +4,7 @@ Get & Set Method
 _________________________________________________________________
 
 Summary of Changes
+
 The program was improved by applying encapsulation using getters and setters to make the classes more organized and secure. The Product, CartItem, and Order classes were updated by changing public fields into private variables with properties. The shopping cart system was also improved with features such as adding products to the cart, updating quantities, removing items, clearing the cart, checkout, payment validation, receipt generation, order history, and low stock alerts. Product searching was also added to make the system easier to use. Several errors were fixed, especially in stock updating, cart quantity handling, and invalid user input handling.
 
 _________________________________________________________________
